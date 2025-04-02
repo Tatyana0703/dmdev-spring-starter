@@ -9,7 +9,7 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
-    <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
+<!--        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
     <!--        <property name="locations" value="classpath:application.properties"/>-->
     <!--    </bean>-->
 
