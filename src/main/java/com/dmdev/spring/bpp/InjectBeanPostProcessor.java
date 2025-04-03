@@ -17,8 +17,10 @@ public class InjectBeanPostProcessor implements BeanPostProcessor, ApplicationCo
         Arrays.stream(bean.getClass().getDeclaredFields())
                 .filter(field -> field.isAnnotationPresent(InjectBean.class))
                 .forEach(field -> {
-                    Object beanToInject = applicationContext.getBean(field.getType());
-                    ReflectionUtils.makeAccessible(field);
+                    Object beanToInject = applicationContext.getBean(field.getType());  //но можем получить exception если несколько бинов одного класса
+//                    field.setAccessible(true);    //заменяем на ReflectionUtils
+//                    field.set(bean, beanToInject);
+                    ReflectionUtils.makeAccessible(field);    //ReflectionUtils чтобы не обрабатывать исключения
                     ReflectionUtils.setField(field, bean, beanToInject);
                 });
 
