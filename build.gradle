@@ -9,6 +9,11 @@ repositories {
     mavenCentral()
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 dependencies {
     implementation 'org.springframework:spring-core:5.3.13'
     implementation 'org.springframework:spring-context:5.3.13'
@@ -24,5 +29,5 @@ test {
 }
 
 wrapper {
-    gradleVersion '7.3'
+    gradleVersion '8.5'
 }
