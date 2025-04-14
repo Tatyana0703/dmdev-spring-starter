@@ -1,11 +1,15 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.2'
-    id "io.spring.dependency-management" version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '3.4.0'
+//    id "io.spring.dependency-management" version '1.0.11.RELEASE'
+    id "io.spring.dependency-management" version '1.1.7'
     id 'java'
 }
 
+//apply plugin: 'io.spring.dependency-management'
+
 group 'org.example'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -13,7 +17,10 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.postgresql:postgresql'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  //for PostConstruct
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'  //for PostConstruct
+//    implementation 'org.postgresql:postgresql'  //из-за него ошибка при bootRun
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
@@ -24,5 +31,5 @@ test {
 }
 
 wrapper {
-    gradleVersion '7.3'
+    gradleVersion '8.5'
 }

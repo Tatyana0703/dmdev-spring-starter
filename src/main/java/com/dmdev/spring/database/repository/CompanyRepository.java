@@ -4,11 +4,12 @@ import com.dmdev.spring.bpp.Auditing;
 import com.dmdev.spring.bpp.Transaction;
 import com.dmdev.spring.database.entity.Company;
 import com.dmdev.spring.database.pool.ConnectionPool;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 
-import javax.annotation.PostConstruct;
+
 import java.util.List;
 import java.util.Optional;
 
